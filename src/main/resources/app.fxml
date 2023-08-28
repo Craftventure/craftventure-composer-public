@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import net.craftventure.composer.view.KeyframeEditor?>
+<?import net.craftventure.composer.view.SceneView?>
+<VBox prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="net.craftventure.composer.controller.MainWindowController">
+    <MenuBar fx:id="mainMenu">
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem fx:id="load" mnemonicParsing="false" text="Load"/>
+            <MenuItem fx:id="save" mnemonicParsing="false" text="Save"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Fixtures">
+            <MenuItem mnemonicParsing="false" text="New"/>
+            <MenuItem mnemonicParsing="false" text="Remove selected"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Preview">
+            <MenuItem fx:id="loadAudio" mnemonicParsing="false" text="Load audio track"/>
+            <MenuItem fx:id="newPreview" mnemonicParsing="false" text="Open new preview screen"/>
+        </Menu>
+    </MenuBar>
+    <HBox VBox.vgrow="ALWAYS">
+        <ListView fx:id="objectList" maxWidth="200.0" minWidth="200.0" prefWidth="200.0"/>
+        <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" HBox.hgrow="ALWAYS">
+            <items>
+                <AnchorPane>
+                    <SceneView fx:id="topDownPreview" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                               AnchorPane.rightAnchor="0.0"
+                               AnchorPane.topAnchor="0.0"/>
+                </AnchorPane>
+                <AnchorPane prefHeight="200" minHeight="200" maxHeight="600">
+                    <KeyframeEditor fx:id="keyframeEditor" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                    AnchorPane.rightAnchor="0.0"
+                                    AnchorPane.topAnchor="0.0"/>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </HBox>
+</VBox>
